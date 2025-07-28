@@ -1,0 +1,75 @@
+{
+    "metadata": {
+        "input_documents": [
+            "South of France - Cities.pdf",
+            "South of France - Cuisine.pdf",
+            "South of France - History.pdf",
+            "South of France - Restaurants and Hotels.pdf",
+            "South of France - Things to Do.pdf",
+            "South of France - Tips and Tricks.pdf",
+            "South of France - Traditions and Culture.pdf"
+        ],
+        "persona": "Travel Planner",
+        "job_to_be_done": "Plan a trip of 4 days for a group of 10 college friends.",
+        "processing_timestamp": "2025-07-28T14:51:31.278424+05:30"
+    },
+    "extracted_sections": [
+        {
+            "document": "South of France - Tips and Tricks.pdf",
+            "section_title": "South of France - Tips and Tricks",
+            "importance_rank": 1,
+            "page_number": 1
+        },
+        {
+            "document": "South of France - History.pdf",
+            "section_title": "South of France - History",
+            "importance_rank": 2,
+            "page_number": 1
+        },
+        {
+            "document": "South of France - Cuisine.pdf",
+            "section_title": "South of France - Cuisine",
+            "importance_rank": 3,
+            "page_number": 1
+        },
+        {
+            "document": "South of France - Traditions and Culture.pdf",
+            "section_title": "South of France - Traditions and Culture",
+            "importance_rank": 4,
+            "page_number": 1
+        },
+        {
+            "document": "South of France - Cities.pdf",
+            "section_title": "South of France - Cities",
+            "importance_rank": 5,
+            "page_number": 1
+        }
+    ],
+    "subsection_analysis": [
+        {
+            "document": "South of France - Tips and Tricks.pdf",
+            "refined_text": "•  Ziplock Bags: Use ziplock bags for liquids, snacks, or to keep items organized and  protected from spills. Packing for All Seasons  Spring (March to May)  •  Clothing: Light sweaters, long-sleeve shirts, t-shirts, and a light jacket or raincoat. •  Additional Tips: Download maps and travel guides to your devices for oﬄine use. •  Additional Tips: Pack a beach umbrella or tent for shade and a cooler for drinks and  snacks. •  Additional Tips: Plan your wine tour route in advance and consider hiring a driver or  joining a guided tour to avoid drinking and driving. Conclusion  Packing for a trip to the South of France involves considering the season, planned activities,  and the needs of both adults and children. Remember to pack light, versatile clothing, and essential items to make the  most of your travel experience.",
+            "page_number": 1
+        },
+        {
+            "document": "South of France - History.pdf",
+            "refined_text": "It is one of the largest and most important medieval Gothic  buildings in Europe. •  Inquisition Tower: One of the Roman towers in Carcassonne, it was used during the  Medieval Inquisition to imprison and torture suspected heretics9. It was an important center during the Roman period and  later became a hub of the aerospace industry. It is one of the largest and best-preserved  Romanesque churches in Europe. •  Cryptoporticus: An underground gallery built by the Romans in the 1st century BC, it  served as a foundation for the Forum and is one of the few remaining examples of  such structures. Aix-en-Provence: A City of Art and Culture  Aix-en-Provence, founded by the Romans in 123 BC, is known for its elegant architecture,  vibrant cultural scene, and association with the painter Paul Cézanne. Key Historical Sites in Aix-en-Provence  •  Cours Mirabeau: This grand boulevard, lined with plane trees, cafes, and fountains, is  the heart of Aix-en-Provence.",
+            "page_number": 1
+        },
+        {
+            "document": "South of France - Cuisine.pdf",
+            "refined_text": "A Culinary Journey Through the South of France  Introduction  The South of France, known for its stunning landscapes and charming villages, is also a  paradise for food lovers. The region's cuisine is a delightful blend of Mediterranean flavors,  fresh ingredients, and traditional recipes passed down through generations. The region's proximity to the Mediterranean Sea ensures  that the seafood is always fresh and flavorful. Famous Dishes  The South of France is home to many iconic dishes that you must try during your visit:  •  Bouillabaisse: A traditional fish stew from Marseille, made with various types of fish,  shellfish, and a flavorful broth seasoned with saﬀron and herbs. Salade Niçoise is a perfect  example of the Mediterranean diet, which emphasizes fresh vegetables, lean proteins,  and healthy fats. The dish is a comforting and satisfying  meal that is perfect for a chilly evening. The menu changes with  the seasons, ensuring that each visit is a new and exciting experience.",
+            "page_number": 1
+        },
+        {
+            "document": "South of France - Traditions and Culture.pdf",
+            "refined_text": "A Comprehensive Guide to Traditions and Culture in the South of France  Introduction  The South of France, with its picturesque landscapes, charming villages, and vibrant cities, is  not only a feast for the eyes but also a treasure trove of cultural traditions and heritage. Eﬀorts to revive and promote the language continue, with festivals and  educational programs dedicated to its preservation. Festivals and Celebrations  Carnival of Nice  Held in Nice from mid-February to early March, the Carnival of Nice is one of the most  famous and oldest carnivals in the world. In the South of France, cities and towns come alive with music, as both amateur  and professional musicians perform in streets, squares, and parks. Traditional Sports and Games  Pétanque  Pétanque is a popular game in the South of France, particularly in Provence. Unlike Spanish bullfighting, the objective is not to harm the bull but to remove ribbons and  other decorations from its horns. The sport is deeply rooted in local culture and is  often accompanied by music and festivities, particularly in Arles from April to October.",
+            "page_number": 1
+        },
+        {
+            "document": "South of France - Cities.pdf",
+            "refined_text": "This area is renowned for its diverse landscapes,  from the sun-drenched beaches of the French Riviera to the rolling vineyards of Provence and  the rugged Pyrenees mountains. Travel Tips  •  Best Time to Visit: The best time to visit the South of France is during the spring (April  to June) and fall (September to October) when the weather is pleasant, and the tourist  crowds are smaller. Over the  centuries, Marseille has been influenced by various cultures, including Greek, Roman, and  North African, making it a melting pot of traditions and customs. It oﬀers stunning views of the  Mediterranean and is lined with cafes and hotels. It is one of the largest and most important medieval Gothic  buildings in Europe. Aix-en-Provence: A City of Art and Culture  History  Aix-en-Provence, founded by the Romans in 123 BC, is known for its elegant architecture,  vibrant cultural scene, and association with the painter Paul Cézanne. Montpellier has been a center of learning and innovation for centuries, attracting  scholars and students from around the world.",
+            "page_number": 1
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+# Ignore virtual environment
+myenv/
+venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Mac/Linux hidden files
+.DS_Store
+
+# Windows hidden files
+Thumbs.db
+desktop.ini
+
+# Output and temp files
+output/*
+!output/.gitkeep
+
+# Model cache and intermediate files
+models/
+*.pkl
+*.joblib
+*.h5
+*.onnx
+
+# Logs and debug files
+*.log
+
+# VSCode settings
+.vscode/
+
+# PyCharm settings
+.idea/

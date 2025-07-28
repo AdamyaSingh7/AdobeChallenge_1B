@@ -8,31 +8,28 @@ A robust, modular PDF intelligence tool that extracts and ranks the most relevan
 
 ---
 
-## Methodology
+## 🧠 Methodology
 
-```markdown
-# Methodology Overview
+### 🔎 Methodology Overview
 
 This pipeline is designed to be **generic**, **modular**, and **fast** (< 60 s for 10 PDFs) while producing **accurate** top‐K sections and summaries for *any* persona and job. We break the task into four main stages:
 
-1. **Section Extraction (core/extractor.py + core/segment.py)**  
-   - **TOC-First**: Most well-produced PDFs (manuals, reports, e-books) include an embedded Table of Contents. We call `doc.get_toc(simple=True)` via PyMuPDF and extract level 1–2 entries directly, preserving official titles and page numbers.  
-   - **Font-Size Fallback**: If no TOC exists, we gather all text spans with their font sizes, identify the dominant “body” size via frequency, then select larger fonts as candidate headings. We merge nearby fragments on the same page, filter out runs longer than 12 words or with fewer than 50 % title-case tokens, and emit the remaining as headings.  
-   - **Segmentation**: With a structured list of `(page, text)` headings, we slice the PDF’s full-page text (extracted via `page.get_text("text")`) between headings to produce `Section` objects containing `heading`, `page`, and `text`. Empty slices fall back to the raw page text to guarantee non-empty content.
+1. **Section Extraction (`core/extractor.py` + `core/segment.py`)**  
+   - **TOC-First**: Uses embedded TOC if available via `doc.get_toc(simple=True)`.
+   - **Font-Size Fallback**: Clusters font sizes to infer heading structure.
+   - **Segmentation**: Forms `Section` objects with `heading`, `page`, and `text`.
 
-2. **Ranking (ranking/scorer.py)**  
-   - **TF-IDF Baseline**: We vectorize all section texts and the concatenated query (`"{persona} needs to {job}"}`) using `TfidfVectorizer`. Cosine similarity provides a strong general signal of relevance across domains.  
-   - **Keyword Boosts & Penalties**: Recognizing that certain headings (e.g. “Things to Do”, “Restaurants”, “Hotels”) are pivotal for trip planning, we apply configurable boosts when those keywords appear. Likewise, we lightly penalize off-target sections (e.g. “History”, “Culture”) for planning tasks. This simple heuristic layer can be adapted per domain by editing `utils/config.py` rather than core code.  
-   - **2× or 3× Candidate Pool**: We initially score `top_k × 3` sections, then **deduplicate** by `(document, page)` to avoid redundant picks, and finally select the first unique `top_k`.
+2. **Ranking (`ranking/scorer.py`)**  
+   - **TF-IDF Baseline**: Computes similarity between section text and query.
+   - **Keyword Boosts & Penalties**: Domain heuristics via `utils/config.py`.
+   - **2× or 3× Candidate Pool**: Expands candidate set, deduplicates, and selects top_k.
 
-3. **Summarization (ranking/summarizer.py)**  
-   - We apply a **TextRank** algorithm on the sentences of each selected section’s text. After splitting into up to 40 sentences, we compute pairwise TF-IDF similarities, build a graph, run PageRank, and select the top 7 sentences (ordered as in the source). This yields concise yet contextual summaries.
+3. **Summarization (`ranking/summarizer.py`)**  
+   - Uses **TextRank** to summarize top-ranked sections into ~7 meaningful lines.
 
-4. **Orchestration & Output (cli/run.py)**  
-   - The CLI ties everything together: it loads PDFs, runs the extractor, computes headings and slices, ranks and deduplicates, summarizes, and dumps a single `output.json` per the expected schema.  
-   - **Docker-Ready**: A lightweight `python:3.10-slim` image with only PyMuPDF, scikit-learn, and networkx ensures offline execution under 1 GB.
-
-By cleanly separating PDF I/O, extraction, ranking, and summarization into distinct modules—and centralizing any domain-specific heuristics in a single `config.py`—this solution generalizes effortlessly to new document sets (research papers, textbooks, financial reports) and new personas/jobs, while staying maintainable and performant.
+4. **Orchestration & Output (`cli/run.py`)**  
+   - Extracts → Ranks → Summarizes → Exports final JSON to `output/output.json`.
+   - Docker-ready using `python:3.10-slim`.
 
 ---
 
@@ -45,11 +42,23 @@ By cleanly separating PDF I/O, extraction, ranking, and summarization into disti
 
 ---
 
-## Prerequisites
+## 📋 Prerequisites
 
-- **Docker** installed (version 20+).
-- **Python** 3.8 or later (for local testing).
-- Python dependencies listed in `requirements.txt`
+- **Docker** installed (version 20+)
+- **Python** 3.8+ (only for local testing, not required for Docker)
+- Dependencies in `requirements.txt`
+
+---
+
+## 🛠️ Installation (Local)
+
+```bash
+git clone https://github.com/AdamyaSingh7/AdobeChallenge_1B.git
+cd AdobeChallenge_1B
+pip install -r requirements.txt
+```
+
+---
 
 ## 🐳 Docker Setup
 

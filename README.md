@@ -54,7 +54,6 @@ This pipeline is designed to be **generic**, **modular**, and **fast** (< 60 s f
 ```bash
 git clone https://github.com/AdamyaSingh7/AdobeChallenge_1B.git
 cd AdobeChallenge_1B
-pip install -r requirements.txt
 ```
 
 ---
@@ -70,6 +69,7 @@ docker build --platform linux/amd64 -t pdfintel:round1b .
 ```powershell
 docker build --platform linux/amd64 -t pdfintel:round1b .
 ```
+> ⚠️ **Note:** The build process takes approximately **1 to 1.5 minutes**, depending on your system.
 
 ### 2. Run
 ### 🔧 Bash

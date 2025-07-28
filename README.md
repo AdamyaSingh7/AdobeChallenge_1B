@@ -51,7 +51,6 @@ This pipeline is designed to be **generic**, **modular**, and **fast** (< 60 s f
 ---
 
 ## 🛠️ Installation (Local)
-
 ```bash
 git clone https://github.com/AdamyaSingh7/AdobeChallenge_1B.git
 cd AdobeChallenge_1B
@@ -63,16 +62,17 @@ pip install -r requirements.txt
 ## 🐳 Docker Setup
 
 ### 1. Build Image
-
+### 🔧 Bash
 ```bash
 docker build --platform linux/amd64 -t pdfintel:round1b .
 ```
+### 🔧 powershell
 ```powershell
 docker build --platform linux/amd64 -t pdfintel:round1b .
 ```
 
 ### 2. Run
-
+### 🔧 Bash
 ```bash
 docker run --rm \
   -v $(pwd)/input:/app/input \
@@ -82,6 +82,7 @@ docker run --rm \
   -e JOB="Plan a trip of 4 days for a group of 10 college friends." \
   pdfintel:round1b
 ```
+### 🔧 powershell
 ```powershell
 docker run --rm `
   -v ${PWD}\input:/app/input `
